@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Libris</title>
+  <meta name="description" content="Ma bibliothèque : étagère, livres lus, envies et conseils de lecture.">
+  <meta name="theme-color" content="#141a29">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Libris">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+</head>
+<body>
+
+<!-- Connexion -->
+<section class="login" id="vLogin" hidden>
+  <div class="login-in">
+    <div class="exl">Ex-libris</div>
+    <h1 class="login-title">Libris</h1>
+    <p class="login-text">Ta bibliothèque dans la poche : les livres sur l'étagère, ceux en cours, tes envies et des conseils de lecture choisis pour toi.</p>
+    <button class="btn primary login-btn" id="loginBtn">Continuer avec Google</button>
+    <p class="status" id="loginStat"></p>
+  </div>
+</section>
+
+<!-- Appli -->
+<div class="wrap" id="vApp" hidden>
+  <header>
+    <div class="exl">Ex-libris</div>
+    <h1><button id="name" aria-label="Changer le nom de la bibliothèque">La bibliothèque</button></h1>
+    <div class="ledger" id="ledger">Ouverture des rayonnages…</div>
+  </header>
+
+  <section id="vLib">
+    <div class="case" id="case"></div>
+    <div class="shelfcap" id="shelfcap"></div>
+
+    <div class="bar">
+      <input class="search" id="q" type="search" placeholder="Titre, auteur, genre…" aria-label="Chercher dans la bibliothèque">
+      <select class="sort" id="sort" aria-label="Trier">
+        <option value="recent">Ajout récent</option>
+        <option value="title">Titre A → Z</option>
+        <option value="author">Auteur A → Z</option>
+        <option value="rating">Mieux notés</option>
+        <option value="year">Parution récente</option>
+        <option value="pages">Plus courts</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrer"></div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section id="vReco" hidden>
+    <p class="reco-intro" id="recoIntro">Des lectures choisies d'après les livres que tu as aimés, tes notes et tes avis.</p>
+    <div class="lbl" style="margin-bottom:8px">Envie de quelque chose de…</div>
+    <div class="moods" id="moods"></div>
+    <input class="wish-in" id="recoWish" placeholder="Précision libre (ex. un roman qui se passe en Italie)">
+    <button class="btn primary" id="recoGo" style="width:100%">Me conseiller des lectures</button>
+    <div class="status" id="recoStat"></div>
+    <div id="recoList"></div>
+  </section>
+</div>
+
+<nav class="tabs" id="tabs" hidden><div class="in">
+  <button class="tab" id="tabLib" role="tab" aria-selected="true">Étagères</button>
+  <button class="tab" id="tabWish" role="tab" aria-selected="false">Envies</button>
+  <button class="add" id="addBtn" aria-label="Ajouter un livre">+</button>
+  <button class="tab" id="tabReco" role="tab" aria-selected="false">Conseils</button>
+</div></nav>
+
+<div class="scrim" id="scrim" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div class="stage" id="stage" hidden role="dialog" aria-modal="true" aria-label="Livre ouvert"></div>
+<div class="toast" id="toast" hidden></div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

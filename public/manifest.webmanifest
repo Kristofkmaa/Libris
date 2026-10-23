@@ -1,0 +1,15 @@
+{
+  "name": "Libris",
+  "short_name": "Libris",
+  "description": "Ma bibliothèque : étagère, livres lus, envies et conseils de lecture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141a29",
+  "theme_color": "#141a29",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
